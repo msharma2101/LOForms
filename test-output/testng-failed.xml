@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [LEEDONLINETest]">
+  <parameter name="ApiSheet" value="Api"/>
+  <parameter name="environment" value="dev"/>
+  <parameter name="browserName" value="firefox"/>
+  <parameter name="rowNum" value="2"/>
+  <parameter name="LogInSheet" value="LogIn"/>
+  <test name="LEEDONLINE(failed)">
+    <parameter name="ApiSheet" value="Api"/>
+    <parameter name="environment" value="dev"/>
+    <parameter name="browserName" value="firefox"/>
+    <parameter name="rowNum" value="2"/>
+    <parameter name="LogInSheet" value="LogIn"/>
+    <classes>
+      <class name="com.lo.Testcases.Get_LEED_getCreditsTest">
+        <methods>
+          <include name="Get_LEED_getCredits"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.lo.Testcases.Get_LEED_getCreditsTest -->
+      <class name="com.lo.Testcases.Post_Api_authenticateTest">
+        <methods>
+          <include name="end"/>
+          <include name="Post_Api_authenticate"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.lo.Testcases.Post_Api_authenticateTest -->
+      <class name="com.lo.Testcases.EB_SS109_RainwaterManagementTest">
+        <methods>
+          <include name="Get_LEED_creditsCredit"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.lo.Testcases.EB_SS109_RainwaterManagementTest -->
+    </classes>
+  </test> <!-- LEEDONLINE(failed) -->
+</suite> <!-- Failed suite [LEEDONLINETest] -->

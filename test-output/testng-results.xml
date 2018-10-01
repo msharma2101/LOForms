@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="LEEDONLINETest" duration-ms="47158" started-at="2018-10-01T21:05:30Z" finished-at="2018-10-01T21:06:17Z">
+    <groups>
+    </groups>
+    <test name="LEEDONLINE" duration-ms="47158" started-at="2018-10-01T21:05:30Z" finished-at="2018-10-01T21:06:17Z">
+      <class name="com.lo.Testcases.Get_LEED_getCreditsTest">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.lo.Testcases.Get_LEED_getCreditsTest@12768ace]" name="setup" is-config="true" duration-ms="10861" started-at="2018-10-01T17:05:49Z" finished-at="2018-10-01T17:05:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[dev]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="Get_LEED_getCredits(int, java.lang.String)[pri:0, instance:com.lo.Testcases.Get_LEED_getCreditsTest@12768ace]" name="Get_LEED_getCredits" duration-ms="1036" started-at="2018-10-01T17:05:59Z" finished-at="2018-10-01T17:06:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Api]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Get_LEED_getCredits -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.lo.Testcases.Get_LEED_getCreditsTest@12768ace]" name="teardown" is-config="true" duration-ms="1211" started-at="2018-10-01T17:06:00Z" finished-at="2018-10-01T17:06:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Get_LEED_getCredits status=SUCCESS method=Get_LEED_getCreditsTest.Get_LEED_getCredits(int, java.lang.String)[pri:0, instance:com.lo.Testcases.Get_LEED_getCreditsTest@12768ace] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.lo.Testcases.Get_LEED_getCreditsTest -->
+      <class name="com.lo.Testcases.Post_Api_authenticateTest">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.lo.Testcases.Post_Api_authenticateTest@1123065c]" name="setup" is-config="true" duration-ms="14355" started-at="2018-10-01T17:05:30Z" finished-at="2018-10-01T17:05:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[dev]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="Post_Api_authenticate(int, java.lang.String)[pri:0, instance:com.lo.Testcases.Post_Api_authenticateTest@1123065c]" name="Post_Api_authenticate" duration-ms="3094" started-at="2018-10-01T17:05:44Z" finished-at="2018-10-01T17:05:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[LogIn]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Post_Api_authenticate -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.lo.Testcases.Post_Api_authenticateTest@1123065c]" name="teardown" is-config="true" duration-ms="1489" started-at="2018-10-01T17:05:47Z" finished-at="2018-10-01T17:05:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Post_Api_authenticate status=SUCCESS method=Post_Api_authenticateTest.Post_Api_authenticate(int, java.lang.String)[pri:0, instance:com.lo.Testcases.Post_Api_authenticateTest@1123065c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="end()[pri:0, instance:com.lo.Testcases.Post_Api_authenticateTest@1123065c]" name="end" is-config="true" duration-ms="0" started-at="2018-10-01T17:06:17Z" finished-at="2018-10-01T17:06:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- end -->
+      </class> <!-- com.lo.Testcases.Post_Api_authenticateTest -->
+      <class name="com.lo.Testcases.EB_SS109_RainwaterManagementTest">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.lo.Testcases.EB_SS109_RainwaterManagementTest@2492e3da]" name="setup" is-config="true" duration-ms="11071" started-at="2018-10-01T17:06:02Z" finished-at="2018-10-01T17:06:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[dev]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="Get_LEED_creditsCredit(int, java.lang.String)[pri:0, instance:com.lo.Testcases.EB_SS109_RainwaterManagementTest@2492e3da]" name="Get_LEED_creditsCredit" duration-ms="2892" started-at="2018-10-01T17:06:13Z" finished-at="2018-10-01T17:06:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Api]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Get_LEED_creditsCredit -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.lo.Testcases.EB_SS109_RainwaterManagementTest@2492e3da]" name="teardown" is-config="true" duration-ms="1098" started-at="2018-10-01T17:06:16Z" finished-at="2018-10-01T17:06:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Get_LEED_creditsCredit status=SUCCESS method=EB_SS109_RainwaterManagementTest.Get_LEED_creditsCredit(int, java.lang.String)[pri:0, instance:com.lo.Testcases.EB_SS109_RainwaterManagementTest@2492e3da] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.lo.Testcases.EB_SS109_RainwaterManagementTest -->
+    </test> <!-- LEEDONLINE -->
+  </suite> <!-- LEEDONLINETest -->
+</testng-results>

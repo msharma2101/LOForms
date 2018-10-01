@@ -1,0 +1,524 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			ExtentReports Library 2.41.1 | http://relevantcodes.com/extentreports-for-selenium/ | https://github.com/anshooarora/
+			Copyright (c) 2015, Anshoo Arora (Relevant Codes) | Copyrights licensed under the New BSD License | http://opensource.org/licenses/BSD-3-Clause
+			Documentation: http://extentreports.relevantcodes.com 
+		-->
+
+		<meta charset='UTF-8' /> 
+		<meta name='description' content='ExtentReports (by Anshoo Arora) is a reporting library for automation testing for .NET and Java. It creates detailed and beautiful HTML reports for modern browsers. ExtentReports shows test and step summary along with dashboards, system and environment details for quick analysis of your tests.' />
+		<meta name='robots' content='noodp, noydir' />
+		<meta name='viewport' content='width=device-width, initial-scale=1' />
+		<meta name='extentx' id='extentx' content='' />
+		
+		<title>
+				LEEDONLINE
+		</title>
+		
+		
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports/45123d736a03aca0abc5c4fcf1e746fef49736fd/cdn/extent.css' type='text/css' rel='stylesheet' />
+		
+		<style>
+				
+      
+        
+      
+    
+		</style>
+	</head>
+	
+	
+	<body class='extent default standard hide-overflow'>
+		<!-- nav -->
+		<nav>
+			<div class='logo-container blue darken-2'>
+				<a class='logo-content' href='http://extentreports.relevantcodes.com'>
+					<span>ExtentReports</span>
+				</a>
+				<a href='#' data-activates='slide-out' class='button-collapse hide-on-large-only'><i class='mdi-navigation-apps'></i></a>
+			</div>
+			<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+				<li class='analysis waves-effect active'><a href='#!' class='test-view' onclick="_updateCurrentStage(0)"><i class='mdi-action-dashboard'></i>Test Details</a></li>
+					<li class='analysis waves-effect'><a href='#!' class='categories-view' onclick="_updateCurrentStage(1)"><i class='mdi-maps-local-offer'></i>Categories</a></li>
+				<li class='analysis waves-effect'>
+					<a href='#!' onclick="_updateCurrentStage(-1)" class='dashboard-view'><i class='mdi-action-track-changes'></i></i>Analysis</a>
+				</li>
+			</ul>
+			<span class='report-name'>Automation Report</span> <span class='report-headline'>WHC</span>
+			<ul class='right hide-on-med-and-down nav-right'>
+				<li class='theme-selector' alt='Click to toggle dark theme. To enable by default, use js configuration $("body").addClass("dark");' title='Click to toggle dark theme. To enable by default, use js configuration $("body").addClass("dark");'>
+					<i class='mdi-hardware-desktop-windows'></i>
+				</li>
+				<li>
+					<span class='suite-started-time'>2018-09-28 16:44:09</span>
+				</li>
+				<li>
+					<span>v2.41.1</span>
+				</li>
+			</ul>
+		</nav>
+		<!-- /nav -->
+		
+		<!-- container -->
+		<div class='container'>
+			
+			<!-- dashboard -->
+			<div id='dashboard-view' class='row'>
+				<div class='time-totals'>
+					<div class='col l2 m4 s6'>
+						<div class='card suite-total-tests'> 
+							<span class='panel-name'>Total Tests</span> 
+							<span class='total-tests'> <span class='panel-lead'></span> </span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s6'>
+						<div class='card suite-total-steps'> 
+							<span class='panel-name'>Total Steps</span> 
+							<span class='total-steps'> <span class='panel-lead'></span> </span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s12'>
+						<div class='card suite-total-time-current'> 
+							<span class='panel-name'>Total Time Taken (Current Run)</span> 
+							<span class='suite-total-time-current-value panel-lead'>0h 0m 3s+34ms</span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s12'>
+						<div class='card suite-total-time-overall'> 
+							<span class='panel-name'>Total Time Taken (Overall)</span> 
+							<span class='suite-total-time-overall-value panel-lead'>0h 0m 3s+34ms</span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s6 suite-start-time'>
+						<div class='card accent green-accent'> 
+							<span class='panel-name'>Start</span> 
+							<span class='panel-lead suite-started-time'>2018-09-28 16:44:06</span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s6 suite-end-time'>
+						<div class='card accent pink-accent'> 
+							<span class='panel-name'>End</span> 
+							<span class='panel-lead suite-ended-time'>2018-09-28 16:44:09</span> 
+						</div> 
+					</div>
+				</div>
+				<div class='charts'>
+					<div class='col s12 m6 l4 fh'> 
+						<div class='card-panel'> 
+							<div>
+								<span class='panel-name'>Tests View</span>
+							</div> 
+							<div class='panel-setting modal-trigger test-count-setting right'>
+								<a href='#test-count-setting'><i class='mdi-navigation-more-vert text-md'></i></a>
+							</div> 
+							<div class='chart-box'>
+								<canvas class='text-centered' id='test-analysis'></canvas>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='t-pass-count weight-normal'></span> test(s) passed</span>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='t-fail-count weight-normal'></span> test(s) failed, <span class='t-others-count weight-normal'></span> others</span>
+							</div> 
+						</div> 
+					</div> 
+					<div class='col s12 m6 l4 fh'> 
+						<div class='card-panel'> 
+							<div>
+								<span class='panel-name'>Steps View</span>
+							</div> 
+							<div class='panel-setting modal-trigger step-status-filter right'>
+								<a href='#step-status-filter'><i class='mdi-navigation-more-vert text-md'></i></a>
+							</div> 
+							<div class='chart-box'>
+								<canvas class='text-centered' id='step-analysis'></canvas>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='s-pass-count weight-normal'></span> step(s) passed </span>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='s-fail-count weight-normal'></span> step(s) failed, <span class='s-others-count weight-normal'></span> others</span>
+							</div> 
+						</div> 
+					</div>
+					<div class='col s12 m12 l4 fh'> 
+						<div class='card-panel'> 
+							<span class='panel-name'>Pass Percentage</span> 
+							<span class='pass-percentage panel-lead'></span> 
+							<div class='progress light-blue lighten-3'> 
+								<div class='determinate light-blue'></div> 
+							</div> 
+						</div> 
+					</div>
+				</div>
+				<div class='system-view'>
+					<div class='col l4 m12 s12'>
+						<div class='card-panel'>
+							<span class='label info outline right'>Environment</span>
+							<table>
+								<thead>
+									<tr>
+										<th>Param</th>
+										<th>Value</th>
+									</tr>
+								</thead>
+								<tbody>
+										<tr>
+											<td>User Name</td>
+											<td>Megha</td>
+										</tr>
+										<tr>
+											<td>OS</td>
+											<td>Windows 7</td>
+										</tr>
+										<tr>
+											<td>Java Version</td>
+											<td>1.7.0_80</td>
+										</tr>
+										<tr>
+											<td>Host Name</td>
+											<td>Megha</td>
+										</tr>
+										<tr>
+											<td>Environment</td>
+											<td>Staging</td>
+										</tr>
+										<tr>
+											<td>Selenium Version</td>
+											<td>2.53</td>
+										</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+					<div class='category-summary-view'>
+						<div class='col l4 m6 s12'>
+							<div class='card-panel'>
+								<span class='label info outline right'>Categories</span>
+								<table>
+									<thead>
+										<tr>
+											<th>Name</th>
+										</tr>
+									</thead>
+									<tbody>
+											<tr>
+												<td>
+													api test
+												</td>
+											</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+			</div>
+			<!-- /dashboard -->
+			
+			<!-- tests -->
+			<div id='test-view' class='row _addedTable'>
+				<div class='col _addedCell1'>
+					<div class='contents'>
+						<div class='card-panel heading'>
+							<h5>Tests</h5>
+						</div>
+						<div class='card-panel filters'>
+							<div>
+								<a class='dropdown-button btn-floating btn-small waves-effect waves-light grey tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+									<i class='mdi-action-reorder'></i>
+								</a>
+								<ul id='tests-toggle' class='dropdown-content'>
+									<li class='pass'><a href='#!'>Pass</a></li>
+									<li class='fail'><a href='#!'>Fail</a></li>
+									<li class='skip'><a href='#!'>Skip</a></li>
+									<li class='divider'></li>
+									<li class='clear'><a href='#!'>Clear Filters</a></li>
+								</ul>
+							</div>
+								<div>
+									<a class='dropdown-button btn-floating btn-small waves-effect waves-light grey category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+										<i class='mdi-maps-local-offer'></i>
+									</a>
+									<ul id='category-toggle' class='dropdown-content'>
+											<li class='api test'><a href='#!'>api test</a></li>
+										<li class='divider'></li>
+										<li class='clear'><a href='#!'>Clear Filters</a></li>
+									</ul>
+								</div>
+							<div>
+								<a class='btn-floating btn-small waves-effect waves-light grey' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+									<i class='mdi-navigation-close'></i>
+								</a>
+							</div>
+							<div>
+								<a class='btn-floating btn-small waves-effect waves-light grey' id='enableDashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+									<i class='mdi-action-track-changes'></i>
+								</a>
+							</div>
+							<div>
+								<a class='btn-floating btn-small waves-effect waves-light blue enabled' id='refreshCharts' alt='Refresh Charts on Filters' title='Refresh Charts on Filters'>
+									<i class='mdi-navigation-refresh'></i>
+								</a>
+							</div>
+							<div class='search' alt='Search Tests' title='Search Tests'>
+								<div class='input-field left'>
+									<input id='searchTests' type='text' class='validate' placeholder='Search Tests...'>
+								</div>
+								<a href="#" class='btn-floating btn-small waves-effect waves-light grey'>
+									<i class='mdi-action-search'></i>
+								</a>
+							</div>
+						</div>
+						<div class='card-panel no-padding-h no-padding-v no-margin-v'>
+							<div class='wrapper'>
+								<ul id='test-collection' class='test-collection'>
+										<li class='collection-item test displayed active pass ' extentid='70071378-41b8-41ec-9146-a36ba66c6c1f'>
+											<div class='test-head'>
+												<span class='test-name'>Get_LEED_getCredits Api <span class='label outline info'>7.244 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-09-28 16:44:08</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-09-28 16:44:09</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+724ms</span>
+												</div>
+												<div class='test-desc'>Get project credits.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>16:44:09</td>
+																	<td class='step-details'>Authorization Token generated<br>null</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>16:44:09</td>
+																	<td class='step-details'>Api Request Id is : <br>a295e379b7c3391d</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>16:44:09</td>
+																	<td class='step-details'>Content Type is : application/json</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>16:44:09</td>
+																	<td class='step-details'>Status Code is : 200</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>16:44:09</td>
+																	<td class='step-details'>verifies response from API<br>{"pointsOverview":{"possilbe":200,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0},"scoreCard":[{"catId":"LT","catName":"Location and Transportation","order":1,"points":{"possilbe":28,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0},"credits":[{"id":"EBSBLT112L-1000143658","shortId":"LT112","order":1,"name":"Transportation Performance","phase":"Standard","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formType":"NA","libraryPath":"credit-library/existing-buildings/v4/LT112","points":{"minPossilbe":14,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":14,"attempted":0},"buttons":{"form":false,"data":true}},{"id":"EBCRLT112","shortId":"LT112","order":1,"name":"Transportation Performance","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"NA","libraryPath":"credit-library/existing-buildings/v4/LT112","points":{"minPossilbe":14,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":14,"attempted":0},"buttons":{"form":false,"data":true}}]},{"catId":"SS","catName":"Sustainable Sites","order":2,"points":{"possilbe":8,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0},"credits":[{"id":"EBSBSS109L-1000143658","shortId":"SS109","order":1,"name":"Rainwater Management","phase":"Standard","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formVersion":"V01","formType":"html","libraryPath":"credit-library/existing-buildings/v4/SS109","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1},"team":[10200545]},{"id":"EBSBSS111L-1000143658","shortId":"SS111","order":2,"name":"Heat Island Reduction","phase":"Standard","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formVersion":"V01","formType":"html","libraryPath":"credit-library/existing-buildings/v4/SS111","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}},{"id":"EBSBSS113L-1000143658","shortId":"SS113","order":3,"name":"Light Pollution Reduction","phase":"Standard","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formVersion":"V01","formType":"html","libraryPath":"credit-library/existing-buildings/v4/SS113","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}},{"id":"EBSBSS118L-1000143658","shortId":"SS118","order":4,"name":"Site Management","phase":"Standard","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formVersion":"V01","formType":"html","libraryPath":"credit-library/existing-buildings/v4/SS118","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}},{"id":"EBCRSS109","shortId":"SS109","order":1,"name":"Rainwater Management","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"html","libraryPath":"credit-library/existing-buildings/v4/SS109","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}},{"id":"EBCRSS111","shortId":"SS111","order":2,"name":"Heat Island Reduction","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"html","libraryPath":"credit-library/existing-buildings/v4/SS111","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}},{"id":"EBCRSS113","shortId":"SS113","order":3,"name":"Light Pollution Reduction","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"html","libraryPath":"credit-library/existing-buildings/v4/SS113","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}},{"id":"EBCRSS118","shortId":"SS118","order":4,"name":"Site Management","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"html","libraryPath":"credit-library/existing-buildings/v4/SS118","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}}]},{"catId":"WE","catName":"Water Efficiency","order":3,"points":{"possilbe":30,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0},"credits":[{"id":"EBSBWE129L-1000143658","shortId":"WE129","order":1,"name":"Water Performance","phase":"Standard","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formType":"NA","libraryPath":"credit-library/existing-buildings/v4/WE129","points":{"minPossilbe":15,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":15,"attempted":0},"buttons":{"form":false,"data":true}},{"id":"EBCRWE129","shortId":"WE129","order":1,"name":"Water Performance","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"NA","libraryPath":"credit-library/existing-buildings/v4/WE129","points":{"minPossilbe":15,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":15,"attempted":0},"buttons":{"form":false,"data":true}}]},{"catId":"EA","catName":"Energy and Atmosphere","order":4,"points":{"possilbe":70,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0},"credits":[{"id":"EBSBEA102L-1000143658","shortId":"EA102","order":1,"name":"Energy Efficiency Best Management Practices","phase":"Standard","isRequired":true,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formVersion":"V01","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EA102"},{"id":"EBSBEA105L-1000143658","shortId":"EA105","order":2,"name":"Energy Performance","phase":"Standard","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formType":"NA","libraryPath":"credit-library/existing-buildings/v4/EA105","points":{"minPossilbe":33,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":33,"attempted":0},"buttons":{"form":false,"data":true}},{"id":"EBSBEA109L-1000143658","shortId":"EA109","order":3,"name":"Fundamental Refrigerant Management","phase":"Standard","isRequired":true,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formVersion":"V01","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EA109"},{"id":"EBSBEA129L-1000143658","shortId":"EA129","order":4,"name":"Grid Harmonization","phase":"Standard","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formVersion":"V01","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EA129","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}},{"id":"EBSBEA127L-1000143658","shortId":"EA127","order":5,"name":"Enhanced Refrigerant Management","phase":"Standard","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formVersion":"V01","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EA127","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}},{"id":"EBCREA102","shortId":"EA102","order":1,"name":"Energy Efficiency Best Management Practices","isRequired":true,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EA102"},{"id":"EBCREA105","shortId":"EA105","order":2,"name":"Energy Performance","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"NA","libraryPath":"credit-library/existing-buildings/v4/EA105","points":{"minPossilbe":33,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":33,"attempted":0},"buttons":{"form":false,"data":true}},{"id":"EBCREA109","shortId":"EA109","order":3,"name":"Fundamental Refrigerant Management","isRequired":true,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EA109"},{"id":"EBCREA129","shortId":"EA129","order":4,"name":"Grid Harmonization","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EA129","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}},{"id":"EBCREA127","shortId":"EA127","order":5,"name":"Enhanced Refrigerant Management","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EA127","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}}]},{"catId":"MR","catName":"Materials and Resources","order":5,"points":{"possilbe":18,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0},"credits":[{"id":"EBSBMR105L-1000143658","shortId":"MR105","order":1,"name":"Purchasing Policy","phase":"Standard","isRequired":true,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formVersion":"V01","formType":"html","libraryPath":"credit-library/existing-buildings/v4/MR105"},{"id":"EBSBMR106L-1000143658","shortId":"MR106","order":2,"name":"Facility Maintenance and Renovation Policy","phase":"Standard","isRequired":true,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formVersion":"V01","formType":"html","libraryPath":"credit-library/existing-buildings/v4/MR106"},{"id":"EBSBMR125L-1000143658","shortId":"MR125","order":3,"name":"Waste Performance","phase":"Standard","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formType":"NA","libraryPath":"credit-library/existing-buildings/v4/MR125","points":{"minPossilbe":8,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":8,"attempted":0},"buttons":{"form":false,"data":true}},{"id":"EBSBMR127L-1000143658","shortId":"MR127","order":4,"name":"Purchasing","phase":"Standard","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formVersion":"V01","formType":"html","libraryPath":"credit-library/existing-buildings/v4/MR127","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}},{"id":"EBCRMR105","shortId":"MR105","order":1,"name":"Purchasing Policy","isRequired":true,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"html","libraryPath":"credit-library/existing-buildings/v4/MR105"},{"id":"EBCRMR106","shortId":"MR106","order":2,"name":"Facility Maintenance and Renovation Policy","isRequired":true,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"html","libraryPath":"credit-library/existing-buildings/v4/MR106"},{"id":"EBCRMR125","shortId":"MR125","order":3,"name":"Waste Performance","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"NA","libraryPath":"credit-library/existing-buildings/v4/MR125","points":{"minPossilbe":8,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":8,"attempted":0},"buttons":{"form":false,"data":true}},{"id":"EBCRMR127","shortId":"MR127","order":4,"name":"Purchasing","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"html","libraryPath":"credit-library/existing-buildings/v4/MR127","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}}]},{"catId":"IQ","catName":"Indoor Environmental Quality","order":6,"points":{"possilbe":44,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0},"credits":[{"id":"EBSBEQ103L-1000143658","shortId":"EQ103","order":1,"name":"Minimum Indoor Air Quality","phase":"Standard","isRequired":true,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formVersion":"V01","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EQ103"},{"id":"EBSBEQ106L-1000143658","shortId":"EQ106","order":2,"name":"Environmental Tobacco Smoke Control","phase":"Standard","isRequired":true,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formVersion":"V01","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EQ106"},{"id":"EBSBEQ108L-1000143658","shortId":"EQ108","order":3,"name":"Green Cleaning Policy","phase":"Standard","isRequired":true,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formVersion":"V01","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EQ108"},{"id":"EBSBEQ131L-1000143658","shortId":"EQ131","order":4,"name":"Indoor Environmental Quality Performance","phase":"Standard","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formType":"NA","libraryPath":"credit-library/existing-buildings/v4/EQ131","points":{"minPossilbe":20,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":20,"attempted":0},"buttons":{"form":false,"data":true}},{"id":"EBSBEQ130L-1000143658","shortId":"EQ130","order":5,"name":"Green Cleaning","phase":"Standard","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formVersion":"V01","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EQ130","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}},{"id":"EBSBEQ128L-1000143658","shortId":"EQ128","order":6,"name":"Integrated Pest Management","phase":"Standard","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formVersion":"V01","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EQ128","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}},{"id":"EBCREQ103","shortId":"EQ103","order":1,"name":"Minimum Indoor Air Quality","isRequired":true,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EQ103"},{"id":"EBCREQ106","shortId":"EQ106","order":2,"name":"Environmental Tobacco Smoke Control","isRequired":true,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EQ106"},{"id":"EBCREQ108","shortId":"EQ108","order":3,"name":"Green Cleaning Policy","isRequired":true,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EQ108"},{"id":"EBCREQ131","shortId":"EQ131","order":4,"name":"Indoor Environmental Quality Performance","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"NA","libraryPath":"credit-library/existing-buildings/v4/EQ131","points":{"minPossilbe":20,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":20,"attempted":0},"buttons":{"form":false,"data":true}},{"id":"EBCREQ130","shortId":"EQ130","order":5,"name":"Green Cleaning","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EQ130","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}},{"id":"EBCREQ128","shortId":"EQ128","order":6,"name":"Integrated Pest Management","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"html","libraryPath":"credit-library/existing-buildings/v4/EQ128","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}}]},{"catId":"IN","catName":"Innovation","order":7,"points":{"possilbe":2,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0},"credits":[{"id":"EBSBIN101L-1000143658","shortId":"IN101","order":1,"name":"Innovation","phase":"Standard","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":true,"hasThresholds":false,"status":"Attempted","statusCode":"C003","rStatus":"In Progress","formVersion":"V01","formType":"html","libraryPath":"credit-library/existing-buildings/v4/IN101","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}},{"id":"EBCRIN101","shortId":"IN101","order":1,"name":"Innovation","isRequired":false,"isEditable":true,"isRpc":false,"isReviewed":false,"hasThresholds":false,"rStatus":"Not Attempted","formType":"html","libraryPath":"credit-library/existing-buildings/v4/IN101","points":{"minPossilbe":1,"attempted":0,"awarded":0,"denied":0,"pending":0,"anticipated":0,"maxPossilbe":1}}]}],"bpDetails":{"BP10200545":{"firstName":"testuser","lastName":"dev region","email":"testuser1@gmail.com"}},"libraryBaseDomain":"https://dev.usgbc.org/","buttons":{"form":true,"thresholds":false,"uploads":true,"team":true,"lpe":false,"comments":false,"library":true,"data":false}}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>16:44:09</td>
+																	<td class='step-details'>API responded in : 7.244 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>16:44:09</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id='test-details-wrapper' class='col _addedCell2'>
+					<div class='contents'>
+						<div class='card-panel details-view'>
+							<h5 class='details-name'></h5>
+							<div class='step-filters right'>
+								<span class='btn-floating btn-small waves-effect waves-light blue' status='info' alt='info' title='info'><i class='mdi-action-info-outline'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light green' status='pass' alt='pass' title='pass'><i class='mdi-action-check-circle'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light red' status='fail' alt='fail' title='fail'><i class='mdi-navigation-cancel'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light red darken-4' status='fatal' alt='fatal' title='fatal'><i class='mdi-navigation-cancel'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light red lighten-2' status='error' alt='error' title='error'><i class='mdi-alert-error'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light orange' alt='warning' status='warning' title='warning'><i class='mdi-alert-warning'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light cyan' status='skip' alt='skip' title='skip'><i class='mdi-content-redo'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light grey darken-2' status='clear-step-filter' alt='Clear filters' title='Clear filters'><i class='mdi-content-clear'></i></span>
+							</div>
+							<div class='details-container'>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /tests -->
+			
+			<!-- categories -->
+				<div id='categories-view' class='row _addedTable hide'>
+					<div class='col _addedCell1'>
+						<div class='contents'>
+							<div class='card-panel heading'>
+								<h5>Categories</h5>
+							</div>
+							<div class='card-panel filters'>
+								<div class='search' alt='Search tests' title='Search tests'>
+									<div class='input-field left'>
+										<input id='searchTests' type='text' class='validate' placeholder='Search...'>
+									</div>
+									<a href="#" class='btn-floating btn-small waves-effect waves-light blue lighten-1'>
+										<i class='mdi-action-search'></i>
+									</a>
+								</div>
+							</div>
+							<div class='card-panel no-padding-h no-padding-v'>
+								<div class='wrapper'>
+									<ul id='cat-collection' class='cat-collection'>
+											<li class='category-item displayed'>
+												<div class='cat-head'>
+													<span class='category-name'>api test</span>
+												</div>
+												<div class='category-status-counts'>
+														<span class='pass label dot'>Pass: 1</span>
+												</div>
+												<div class='cat-body'>
+													<div class='category-status-counts'>
+														<div class='button-group'>
+															<a href='#!' class='pass label filter'>Pass <span class='icon'>1</span></a>
+															<a href='#!' class='fail label filter'>Fail <span class='icon'>0</span></a>
+															<a href='#!' class='other label filter'>Others <span class='icon'>0</span></a>
+														</div>
+													</div>
+													<div class='cat-tests'>
+														<table class='bordered'>
+															<thead>
+																<tr>
+																	<th>RunDate</th>
+																	<th>Test Name</th>
+																	<th>Status</th>
+																</tr>
+															</thead>
+															<tbody>
+																	<tr class='pass'>
+																		<td>2018-09-28 16:44:08</td>
+																		<td><span class='category-link linked' extentid='70071378-41b8-41ec-9146-a36ba66c6c1f'>Get_LEED_getCredits Api <span class='label outline info'>7.244 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+															<tbody>
+														</table>
+													</div>
+												</div> 
+											</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id='cat-details-wrapper' class='col _addedCell2'>
+						<div class='contents'>
+							<div class='card-panel details-view'>
+								<h5 class='cat-name'></h5>
+								<div class='cat-container'>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<!-- /categories -->
+			
+			<!-- exceptions -->
+			<!-- /exceptions -->
+			
+			<!-- testrunner logs -->
+			<!-- /testrunner logs -->
+			
+		</div>
+		<!-- /container -->
+		
+		<!-- test dashboard counts setting -->
+		<div id='test-count-setting' class='modal bottom-sheet'> 
+			<div class='modal-content'> 
+				<h5>Configure Tests Count Setting</h5> 
+				<input name='test-count-setting' type='radio' id='parentWithoutNodes' class='with-gap'> 
+				<label for='parentWithoutNodes'>Parent Tests Only (Does not include child nodes in counts)</label> 
+				<br> 
+				<input name='test-count-setting' type='radio' id='parentWithoutNodesAndNodes' class='with-gap'> 
+				<label for='parentWithoutNodesAndNodes'>Parent Tests Without Child Tests + Child Tests</label> 
+				<br> 
+				<input name='test-count-setting' type='radio' id='childNodes' class='with-gap'> 
+				<label for='childNodes'>Child Tests Only</label> 
+			</div> 
+			<div class='modal-footer'> 
+				<a href='#!' class='modal-action modal-close waves-effect waves-green btn'>Save</a> 
+			</div> 
+		</div>
+		<!-- /test dashboard counts setting -->
+		
+		<!-- filter for step status -->
+		<div id='step-status-filter' class='modal bottom-sheet'> 
+			<div class='modal-content'> 
+				<h5>Select status</h5> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-pass'> 
+				<label for='step-dashboard-filter-pass'>Pass</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-fail'> 
+				<label for='step-dashboard-filter-fail'>Fail</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-fatal'> 
+				<label for='step-dashboard-filter-fatal'>Fatal</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-error'> 
+				<label for='step-dashboard-filter-error'>Error</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-warning'> 
+				<label for='step-dashboard-filter-warning'>Warning</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-skip'> 
+				<label for='step-dashboard-filter-skip'>Skipped</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-info'> 
+				<label for='step-dashboard-filter-info'>Info</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-unknown'> 
+				<label for='step-dashboard-filter-unknown'>Unknown</label> 
+			</div>
+			<div class='modal-footer'> 
+				<a href='#!' class='modal-action modal-close waves-effect waves-green btn'>Save</a> 
+			</div> 
+		</div>
+		<!-- /filter for step status -->
+		
+		<script src='https://cdn.rawgit.com/anshooarora/extentreports/6032d73243ba4fe4fb8769eb9c315d4fdf16fe68/cdn/extent.js' type='text/javascript'></script>
+
+		<script>$(document).ready(function() { $('.logo span').html('ExtentReports'); });</script>
+		<script>
+				
+      
+        $(document).ready(function() {
+          
+        });
+      
+    
+		</script>
+	</body>
+</html>

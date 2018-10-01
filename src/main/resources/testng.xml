@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LEEDONLINETest">
+    
+  <test name="LEEDONLINE">
+    <parameter name="browserName"  value="chrome"/>
+    <parameter name="environment"  value="dev"/>
+    <parameter name="rowNum" value="2"/>
+    <parameter name="LogInSheet" value="LogIn"/>
+    <parameter name="ApiSheet" value="Api"/>
+
+    <classes>        
+	      <!-- Api tests -->
+		  <class name="com.lo.Testcases.Post_Api_authenticateTest"/>
+		  <class name="com.lo.Testcases.Get_LEED_getCreditsTest"/>
+		  <class name="com.lo.Testcases.EB_SS109_RainwaterManagementTest"/>
+	 </classes>   
+	    </test>    
+</suite>
